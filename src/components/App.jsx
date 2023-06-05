@@ -20,21 +20,20 @@ class App extends Component {
   };
 
   async componentDidUpdate(_, prevState) {
-    let { currentPage } = this.state;
-    const prevSearchValue = prevState.searchText;
-    const nextSearchValue = this.state.searchText;
-
     // Перевіряємо, чи змінились пропси запиту або state сторінки (currentPage)
     if (
-      prevSearchValue !== nextSearchValue ||
-      prevState.currentPage !== currentPage
+      prevState.searchText !== this.state.searchText ||
+      prevState.currentPage !== this.state.currentPage
     ) {
       // запуск спінера
       this.setState({ loading: true });
 
       //  запит на бекенд
       try {
-        const response = await getApi(nextSearchValue, currentPage);
+        const response = await getApi(
+          this.state.searchText,
+          this.state.currentPage
+        );
         const { hits, totalHits } = response.data;
         this.setState(prevState => ({
           images: [...prevState.images, ...hits],

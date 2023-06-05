@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BiSearch } from 'react-icons/bi';
 // import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 import css from './Searchbar.module.css';
 
@@ -27,6 +28,13 @@ class Searchbar extends Component {
     const { value } = this.state;
     //   робимо перевірку на пусту строку та виводимо повідомлення
     if (value === '') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please enter a search term!',
+        // footer: '<a href="">Why do I have this issue?</a>',
+      });
+
       //   toast.error(`${notificationMassege}`, notificationOptions);
     }
 
@@ -57,6 +65,7 @@ class Searchbar extends Component {
             value={this.state.value}
           />
         </form>
+        {/* <ToastContainer /> */}
       </header>
 
       // ====================================================
