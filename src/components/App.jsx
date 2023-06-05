@@ -1,58 +1,9 @@
-// import React, { Component } from 'react';
-// import Searchbar from './Searchbar/Searchbar';
-
-// class App extends Component {
-//   state = {
-//     isShowModal: false,
-//     searchText: '',
-//   };
-
-//   // метод при помощи которого прокидываем значение инпута из компонента Search в компонент ContentInfo
-//   handleSearch = searchText => {
-//     console.log('app state', this.state);
-//     this.setState({ searchText }); // записываем значение инпута в свойство searchText объекта state
-//     console.log('app searchText', searchText);
-//   };
-
-//   render() {
-//     return (
-//       <div>
-//         <Searchbar handleSearch={this.handleSearch} />;
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-
-//       <Searchbar />
-//     </div>
-
-//   );
-// };
-
-// ==========================================================
-
 import 'react-toastify/dist/ReactToastify.css';
 import { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
-import { Loader } from 'components/Loader/Loader';
+import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
 import ErrorView from './ErrorView/ErrorView';
 import getApi from './Servise/getApi';

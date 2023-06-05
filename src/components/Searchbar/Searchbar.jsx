@@ -1,36 +1,9 @@
 import React, { Component } from 'react';
 import { BiSearch } from 'react-icons/bi';
-import { ToastContainer, toast } from 'react-toastify';
-// import styles from '../styles/styles.css';
+// import { ToastContainer, toast } from 'react-toastify';
+
 import css from './Searchbar.module.css';
 
-//  для создания контролируемой формы создаем state, куда передаем value - которое мы будет отслеживать(т.е. это то что мы ввовдим в поле поиска)
-
-// class Searchbar extends Component {
-// 	state = {
-// 		value: '',
-// 	}
-
-// 	//! функция handleChange обновляет значение value в state в зависимости от введенных в инпут данных
-
-// handleChange = ({ target: { value } }) => {   // вариант с глубокой деструктуризацией в подписи функции
-// 	this.setState({ value })
-// }
-
-// handleChange = (e) => {
-// this.setState({ value:e.target.value }) // без деструктуризации
-
-// 	const { target } = e        // деструтуризация через переменные внутри функции
-// 	const { value } = target
-// 	this.setState({ value })
-// }
-
-// handleSubmit = (e) => {
-// 	e.preventDefault()       // отмена действия по умолчанию(перезагрузка страницы при сабмите)
-// 	this.props.handleSearch(this.state.value) // вызываем handleSearch из appi
-// }
-
-// =======================================================
 class Searchbar extends Component {
   state = {
     value: '',
@@ -38,19 +11,13 @@ class Searchbar extends Component {
 
   // 	//* функція handleChange відновлює значення value в state в відповідно до введенних в інпут відомостей
 
-  // handleChange = ({ target: { value } }) => {   // вариант с глубокой деструктуризацией в подписи функции
-  // 	this.setState({ value })
-  // }
-
   handleChange = evt => {
-    //   this.setState({ value:e.target.value }) // без деструктуризации
-
     // деструктурізація
     const { target } = evt;
     const { value } = target;
 
     this.setState({ value });
-    console.log('Searchbar value', value);
+    //     console.log('Searchbar value', value);
   };
 
   handleSubmit = e => {
@@ -65,8 +32,8 @@ class Searchbar extends Component {
 
     onSubmit(value); // викликаємо функцію handleSearch, яка прийшла з Аpp через пропси
 
-    console.log('Searchbar state', this.state);
-    console.log('Searchbar props', this.props);
+    // console.log('Searchbar state', this.state);
+    // console.log('Searchbar props', this.props);
 
     //   очищення поля пошуку(input) після сабміту
     this.setState({ value: '' });
