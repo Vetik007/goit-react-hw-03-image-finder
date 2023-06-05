@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-// import { ImageItem, Img } from './ImageGalleryItem.styled';
+import css from './ImageGalleryItem.module.css';
 
-export const ImageGalleryItem = ({ item, openModal }) => {
+const ImageGalleryItem = ({ item, openModal }) => {
   const { largeImageURL, tags, webformatURL } = item;
   return (
     <li
@@ -9,11 +9,19 @@ export const ImageGalleryItem = ({ item, openModal }) => {
         e.preventDefault();
         openModal(largeImageURL, tags);
       }}
+      className={css.galleryItem}
     >
-      <img src={webformatURL} alt={tags} loading="lazy" />
+      <img
+        src={webformatURL}
+        alt={tags}
+        loading="lazy"
+        className={css.ImageGalleryItem}
+      />
     </li>
   );
 };
+
+export default ImageGalleryItem;
 
 ImageGalleryItem.propTypes = {
   item: PropTypes.shape({

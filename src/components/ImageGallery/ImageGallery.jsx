@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
-// import { GalleryList } from './ImageG2allery.styled';
+import css from './ImageGallery.module.css';
 
-import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 
-export const ImageGallery = ({ images, openModal }) => {
+const ImageGallery = ({ images, openModal }) => {
   return (
-    <ul>
+    <ul className={css.gallery}>
       {images.map(img => (
         <ImageGalleryItem key={img.id} item={img} openModal={openModal} />
       ))}
     </ul>
   );
 };
+
+export default ImageGallery;
 
 ImageGallery.propTypes = {
   images: PropTypes.array.isRequired,

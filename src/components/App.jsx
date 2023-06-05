@@ -50,10 +50,10 @@
 import 'react-toastify/dist/ReactToastify.css';
 import { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
-import { ImageGallery } from './ImageGallery/ImageGallery';
-import { Button } from 'components/Button/Button';
+import ImageGallery from './ImageGallery/ImageGallery';
+import Button from './Button/Button';
 import { Loader } from 'components/Loader/Loader';
-import { Modal } from 'components/Modal/Modal';
+import Modal from './Modal/Modal';
 import ErrorView from './ErrorView/ErrorView';
 import getApi from './Servise/getApi';
 
