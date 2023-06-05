@@ -5,7 +5,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
-import ErrorView from './ErrorView/ErrorView';
+import ErrorMessadge from './ErrorView/ErrorMessadge';
 import getApi from './Servise/getApi';
 
 class App extends Component {
@@ -106,10 +106,10 @@ class App extends Component {
         {totalPage / 12 > currentPage && <Button loadMore={this.onLoadMore} />}
 
         {/* нічого не знайшло */}
-        {totalPage === 0 && <ErrorView />}
+        {totalPage === 0 && <ErrorMessadge />}
 
         {/* помилка запиту */}
-        {error && <ErrorView>{error}</ErrorView>}
+        {error && <ErrorMessadge>{error}</ErrorMessadge>}
       </>
     );
   }
