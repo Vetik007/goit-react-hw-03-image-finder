@@ -5,7 +5,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
-import ErrorMessadge from './ErrorView/ErrorMessadge';
+import ErrorMessage from './ErrorView/ErrorMessage';
 import getApi from './Servise/getApi';
 
 class App extends Component {
@@ -103,13 +103,16 @@ class App extends Component {
         <Loader isLoading={loading} />
 
         {/* кнопка завантажити ще */}
-        {totalPage / 12 > currentPage && <Button loadMore={this.onLoadMore} />}
+        {Math.ceil(totalPage / 12) > currentPage && (
+          <Button loadMore={this.onLoadMore} />
+        )}
 
         {/* нічого не знайшло */}
-        {totalPage === 0 && <ErrorMessadge />}
+        {/* {totalPage === 0 && <ErrorMessadge />} */}
+        {totalPage === 0 ? <ErrorMessage /> : null}
 
         {/* помилка запиту */}
-        {error && <ErrorMessadge>{error}</ErrorMessadge>}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </>
     );
   }

@@ -6,7 +6,7 @@ const ImageGalleryItem = ({ item, openModal }) => {
   return (
     <li
       onClick={e => {
-        e.preventDefault();
+        // e.preventDefault();
         openModal(largeImageURL, tags);
       }}
       className={css.galleryItem}
